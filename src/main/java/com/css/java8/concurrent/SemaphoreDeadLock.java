@@ -16,6 +16,12 @@ public class SemaphoreDeadLock {
 
         t1.start();
         t2.start();
+
+        //Release method will increase the number of permits even though thread not acquired by acquire method
+        System.out.println("No of initial permits of " + first + "are : " + first.availablePermits());
+        first.release();
+        first.release();
+        System.out.println("Final permits of " + first + "are : " + first.availablePermits());
     }
 
     private static class DoubleResourceGrabber implements Runnable {
