@@ -16,17 +16,5 @@ public class ListExample {
         System.out.println("NUMBERS :: " + numbers);
         System.out.println("EVENS :: " + evens);
         System.out.println("ODDS :: " + odds);
-
-        System.out.println(isMatchesGroup("services/dataservice"));
-
-    }
-
-    private static boolean isMatchesGroup(String filePath) {
-        List<String> basePatterns = getBasePatterns();
-        return basePatterns.stream().filter(pattern -> filePath.startsWith(pattern)).findAny().isPresent();
-    }
-
-    private static List<String> getBasePatterns() {
-        return Arrays.asList("src/main/webapp/pages/", "sr/main/webapp/WEB-INF/prefabs/", "services");
     }
 }
